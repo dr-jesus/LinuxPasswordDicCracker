@@ -1,4 +1,5 @@
 LINUX PASWORD CRACKER (HASH DECRYPTOR) USING PASSWORDS DICTIONARY
+<<<<<<< HEAD
 
 This python script is designed to detect hashing algorithms of specific users in the /etc/shadow file and tries to crack those hashes using by reading words from a dictionary hash them and compare them with the hashes in the original /etc/shadow file.
 The attack uses the user's dictionary of choice, otherwise it uses default dictionary file "dictionary.txt".
@@ -16,4 +17,5 @@ NOTE:
 
 e-mail:
       jesus.dacoast@gmail.com
+
 
