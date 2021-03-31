@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 ###############################################################################
 # Mon,April 20th 2020 - 21:51 GMT+1                                           #
 # Coder: jesus dacoast                                                        #
@@ -17,7 +18,7 @@ from six.moves import input
 
 PASS_DCT = "dictionary.txt"  # Default Password Dictionary
 # PASS_DCT = "/usr/share/wordlists/dirb/others/best1050.txt"  # Password Dictionary
-SHADOW_F = "/etc/shadow"  # Shadow File must be root to access this file
+SHADOW_F = "shadow.txt"  # Shadow File must be root to access this file
 
 
 def intro():
@@ -103,6 +104,30 @@ def checkPasswd(user, cryptedPasswd):
             print("[-] Password Not Found.\n")
             return
         elif ash[0] == "1":
+            hashT = ash[0]
+            salt = ash[1]
+            hash = ash[2]
+            print("[+] Hash: {}".format(hashType(hashT)))
+            print("[+] Salt is: {}".format(salt))
+            print("[+] Hashed password is: {}".format(hash))
+            print("[*] Cracking Password For: {}".format(user))
+            dictFile = open(dct, "rt")  # open file as read text file
+            for word in dictFile.readlines():
+                word = word.replace(
+                    " ", ""
+                ).strip()  # remove space, remove leading and trailing
+                # word = word.strip("\n")  # eliminer les sauts des lignes
+                # print(word) #if something going bad with your dict. try to incomment this and c
+                cryptWord = crypt.crypt(word, "$1$" + salt)
+                if cryptWord == cryptedPasswd:
+                    print(
+                        "[++] Password Found For User [ {} ] :: [ {} ] \n".format(
+                            user, word
+                        )
+                    )
+                    return
+            print("[-] Password Not Found.\n")
+            return
             print("Not made to Crack MD5 Hashes yet!")
             sys.exit()
         elif ash[0] == "5":
