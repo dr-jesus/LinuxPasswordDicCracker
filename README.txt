@@ -11,7 +11,7 @@ USAGE:
      sudo python3 sha512dicCryptor.py
  
 NOTE:
-     - Tested on Parrot OS 64, for passwords hashed with SHA-512. 
+     - Tested on Parrot OS 64, for passwords hashed with SHA-512 & MD5. 
      - Coded using Python 3.8.2.
      - Should run this program as root.
 
