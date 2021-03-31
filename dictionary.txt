@@ -64,6 +64,7 @@ justin
 hackme
 killer
 letmein
+msfadmin
 liverpool
 lovely
 loveme

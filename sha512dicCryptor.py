@@ -6,7 +6,7 @@
 # A simple python3 script for the decryption of linux hashed passwords with   #
 # default round set as -R 5000 , using the /etc/shadow file and a passwords   #
 # dictionary of choice.                                                       #
-# Version: V1.                                                                #
+# Version: V1.1                                                                #
 # [Tested and proved on Parrot Linux OS 64.]                                  #
 ###############################################################################
 import sys
@@ -25,7 +25,7 @@ def intro():
     print(" /#########################################################\ ")
     print(" ()##~  Linux hashed password Cracker using Dictionary ~##() ")
     print(" ()######~~~~~  jesus.dacoast[AT]gmail[DOT]com ~~~~~######() ")
-    print(" ()                      Version 1.0                      () ")
+    print(" ()                      Version 1.1                      () ")
     print(" () nb: Tested on Parrot/OS for hashed pwd at the default () ")
     print(" () round of -R 5000, must be root to access etc/shadow   () ")
     print(" ()                        -ENJOY-                        () ")
@@ -128,8 +128,7 @@ def checkPasswd(user, cryptedPasswd):
                     return
             print("[-] Password Not Found.\n")
             return
-            print("Not made to Crack MD5 Hashes yet!")
-            sys.exit()
+            
         elif ash[0] == "5":
             print("Not made to Crack SHA-256 Hashes yet!")
             sys.exit()
